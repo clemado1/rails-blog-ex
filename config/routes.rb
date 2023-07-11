@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root :to => "calculator#main"
+  root :to => "blog#index"
+  post "/create" => "blog#create"
+  get "/update/:postId" => "blog#update"
+  post "/update" => "blog#updateAction"
+  get "/delete/:postId" => "blog#delete"
+
   get "/home" => "blog#index"
   get "/test" => "blog#test"
   post "/result" => "calculator#result"
